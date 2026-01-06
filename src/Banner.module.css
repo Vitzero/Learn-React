@@ -1,0 +1,21 @@
+.header{
+ 
+  display: flex;
+  align-items: center;
+  background-color: #6278f7;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: -1rem;
+}
+
+.header img{
+    height: 24rem;
+    width: 1200px;
+    
+}
+
+.header p{
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--blue);
+}
