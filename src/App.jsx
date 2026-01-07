@@ -1,18 +1,15 @@
-import { Banner } from './Banner'
-import './App.css'
+import { Banner } from "./components/Banner";
+import { Form } from "./components/Forms/Form"
+import "./App.css";
 
 function App() {
-
   return (
     <div>
-      <header>
-        <Banner/>
-      </header>
-      
-
+  
+          <Banner />
+          <Form />
     </div>
-    
-  )
+  );
 }
 
-export default App
+export default App;
