@@ -4,7 +4,7 @@ import { ListaSuspensa } from "../ListaSuspensa/ListaSuspensa";
 import { BotaoForm } from "../Botao/BotaoForm";
 import { useState } from "react";
 
-export function Form() {
+export function Form(props) {
   const times = [
     "Programação",
     "Front-End",
@@ -21,7 +21,13 @@ export function Form() {
 
   function aoSalvar(evento) {
     evento.preventDefault();
-    console.log("Form foi submetido! => ",nome,cargo,imagem,time);
+    props.aoColaboradorCadastrado({
+        nome: nome,
+        cargo: cargo,
+        imagem: imagem,
+        time: time
+    })
+ 
   }
 
   return (
