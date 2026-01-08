@@ -1,3 +1,4 @@
+import { Colaborador } from '../Colaborador/Colaborador'
 import styles from './Time.module.css'
 
 export function Time(props){
@@ -8,6 +9,8 @@ export function Time(props){
 
         <section className={styles.time} style={css}>
             <h3 style={{borderColor: props.corPrimaria}}>{props.nome}</h3>
+            <Colaborador/>
+            <Colaborador/>
         </section>
     )
 
