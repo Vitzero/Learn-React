@@ -39,6 +39,8 @@ function App() {
     }
   ]
 
+  const NomesTimes = times.map(time => time.nome)
+
 
 const [colaboradores, setColaboradores] = useState([])
 
@@ -52,7 +54,7 @@ function aoNovoColaboradorAdicionado(colaborador){
     <div>
   
           <Banner />
-          <Form aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)} />
+          <Form times={NomesTimes} aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)} />
 
           {times.map(time => <Time key={time.nome} nome={time.nome} corPrimaria={time.corPrimaria} corSecundaria={time.corSecundaria}/>)}
 
