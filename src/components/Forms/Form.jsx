@@ -1,30 +1,72 @@
-import styles from './Form.module.css'
-import { CampoTexto } from '../CampoTexto/CampoTexto'
-import { ListaSuspensa } from '../ListaSuspensa/ListaSuspensa'
-import { BotaoForm } from '../Botao/BotaoForm'
+import styles from "./Form.module.css";
+import { CampoTexto } from "../CampoTexto/CampoTexto";
+import { ListaSuspensa } from "../ListaSuspensa/ListaSuspensa";
+import { BotaoForm } from "../Botao/BotaoForm";
+import { useState } from "react";
 
-export function Form () {
-    const times = [
-        'Programação',
-        'Front-End',
-        'Data Science',
-        'DevOps',
-        'Design',
-        'Mobile'
-    ]
-    return(
-        <section className={styles.formulario}>
-            <form>
-                <h2>Preencha os dados para criar o card do colaborador</h2>
-                <CampoTexto label="Nome" placeholder="digite seu nome.."/>
-                <CampoTexto label="Cargo" placeholder="digite seu cargo.."/>
-                <CampoTexto label="Imagem" placeholder="Cole o link url da imagem..."/>
-                <ListaSuspensa label="Time" itens={times} />
-                <BotaoForm>
-                    Criar Card
-                </BotaoForm>
-            </form>
-        </section>
+export function Form() {
+  const times = [
+    "Programação",
+    "Front-End",
+    "Data Science",
+    "DevOps",
+    "Design",
+    "Mobile",
+  ];
 
-    )
+  const [nome, setNome] = useState('');
+  const [cargo, setCargo] = useState('');
+  const [imagem, setImagem] = useState('');
+  const [time, setTime] = useState('');
+
+  function aoSalvar(evento) {
+    evento.preventDefault();
+    console.log("Form foi submetido! => ",nome,cargo,imagem,time);
+  }
+
+  return (
+    <section className={styles.formulario}>
+      
+      <form onSubmit={aoSalvar}>
+
+        <h2>Preencha os dados para criar o card do colaborador</h2>
+
+        <CampoTexto 
+          obrigatorio={true}
+          valor={nome} 
+          label="Nome" 
+          aoAlterado={valor => setNome(valor)}
+          placeholder="digite seu nome.." />
+
+        <CampoTexto
+          obrigatorio={true}
+          valor={cargo}
+          label="Cargo"
+          aoAlterado={valor => setCargo(valor)}
+          placeholder="digite seu cargo.."
+        />
+
+        <CampoTexto
+          obrigatorio={true}
+          valor={imagem}
+          label="Imagem"
+          aoAlterado={valor => setImagem(valor)}
+          placeholder="Cole o link url da imagem..."
+        />
+
+        <ListaSuspensa 
+          obrigatorio={true}
+          label="Time" 
+          itens={times} 
+          valor={time}
+          aoAlterado={valor => setTime(valor)}
+          
+        />
+
+        <BotaoForm>Criar Card</BotaoForm>
+
+      </form>
+
+    </section>
+  );
 }
