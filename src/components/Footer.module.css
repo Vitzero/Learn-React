@@ -12,7 +12,13 @@
 /* Lado esquerdo: redes sociais */
 .ladoEsquerdo {
     display: flex;
-    gap: 15px; /* espaço entre os ícones */
+    gap: 24px; 
+    padding: 20px;
+    
+}
+
+.ladoEsquerdo img{
+    cursor: pointer;
 }
 
 /* Centro: logo */

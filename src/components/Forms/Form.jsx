@@ -5,7 +5,6 @@ import { BotaoForm } from "../Botao/BotaoForm";
 import { useState } from "react";
 
 export function Form(props) {
-
   const [nome, setNome] = useState("");
   const [cargo, setCargo] = useState("");
   const [imagem, setImagem] = useState("");
@@ -18,11 +17,11 @@ export function Form(props) {
       cargo: cargo,
       imagem: imagem,
       time: time,
-    })
-    setNome('')
-    setCargo('')
-    setImagem('')
-    setTime('')
+    });
+    setNome("");
+    setCargo("");
+    setImagem("");
+    setTime("");
   }
 
   return (
