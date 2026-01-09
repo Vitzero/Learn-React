@@ -1,0 +1,34 @@
+.rodape {
+    background-color: #6278f7;
+    padding: 20px 50px;
+}
+
+.container {
+    display: flex;
+    align-items: center;        /* centraliza verticalmente */
+    justify-content: space-between; /* esquerda, centro, direita */
+}
+
+/* Lado esquerdo: redes sociais */
+.ladoEsquerdo {
+    display: flex;
+    gap: 15px; /* espaço entre os ícones */
+}
+
+/* Centro: logo */
+.centro {
+    display: flex;
+    justify-content: center;
+    flex: 1; /* ocupa espaço entre esquerda e direita */
+    margin-left: 160px;
+}
+
+/* Lado direito: texto */
+.ladoDireito {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.ladoDireito h3{
+    color: white;
+}

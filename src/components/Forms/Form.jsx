@@ -18,7 +18,11 @@ export function Form(props) {
       cargo: cargo,
       imagem: imagem,
       time: time,
-    });
+    })
+    setNome('')
+    setCargo('')
+    setImagem('')
+    setTime('')
   }
 
   return (
