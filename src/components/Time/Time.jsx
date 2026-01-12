@@ -9,6 +9,7 @@ export function Time({time, colaboradores, aoDeletar}) {
       <section className={styles.time} style={{ backgroundColor: time.corSecundaria }}>
         <h3 style={{ borderColor: time.corPrimaria }}>{time.nome}</h3>
         <div className={styles.colaboradores}>
+        <input type='color' className={styles.inputCor} />
           {colaboradores.map((colaborador,indice) => (
             <Colaborador
               key={indice}
@@ -16,6 +17,7 @@ export function Time({time, colaboradores, aoDeletar}) {
               corDeFundo={time.corPrimaria}
               imagem={colaborador.imagem}
               aoDeletar={() => aoDeletar()} 
+              
             />
           ))}
         </div>

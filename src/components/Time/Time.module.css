@@ -18,3 +18,15 @@
     margin-top: 32px;
     flex-wrap: wrap;
 }
+
+.inputCor {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  width: 24px;
+  height: 24px;
+  display: block;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
