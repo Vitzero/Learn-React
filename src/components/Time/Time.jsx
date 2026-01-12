@@ -1,21 +1,21 @@
 import { Colaborador } from "../Colaborador/Colaborador";
 import styles from "./Time.module.css";
 
-export function Time(props) {
-  const css = { backgroundColor: props.corSecundaria };
+export function Time({time, colaboradores, aoDeletar}) {
+  if (!time) return null; // evita erro se time for undefined
 
   return (
-    props.colaboradores.length > 0 && (
-      <section className={styles.time} style={css}>
-        <h3 style={{ borderColor: props.corPrimaria }}>{props.nome}</h3>
+    colaboradores.length > 0 && (
+      <section className={styles.time} style={{ backgroundColor: time.corSecundaria }}>
+        <h3 style={{ borderColor: time.corPrimaria }}>{time.nome}</h3>
         <div className={styles.colaboradores}>
-          {props.colaboradores.map((colaborador) => (
+          {colaboradores.map((colaborador,indice) => (
             <Colaborador
-              corDeFundo={props.corPrimaria}
-              key={colaborador.nome}
-              nome={colaborador.nome}
-              cargo={colaborador.cargo}
+              key={indice}
+              colaborador={colaborador}
+              corDeFundo={time.corPrimaria}
               imagem={colaborador.imagem}
+              aoDeletar={() => aoDeletar()} 
             />
           ))}
         </div>

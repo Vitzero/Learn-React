@@ -1,19 +1,15 @@
 import styles from "./CampoTexto.module.css";
 
-export function CampoTexto(props) {
-  function aoDigitado(evento) {
-    props.aoAlterado(evento.target.value);
-    //setValor(evento.target.value)
-  }
+export function CampoTexto({label, placeholder, valor, aoAlterado, obrigatorio = false}) {
 
   return (
     <div className={styles.CampoTexto}>
-      <label>{props.label}</label>
+      <label>{label}</label>
       <input
-        value={props.valor}
-        onChange={aoDigitado}
-        required={props.obrigatorio}
-        placeholder={props.placeholder}
+        value={valor}
+        onChange={evento => aoAlterado(evento.target.value)}
+        required={obrigatorio}
+        placeholder={placeholder}
       />
     </div>
   );

@@ -4,7 +4,7 @@ import { ListaSuspensa } from "../ListaSuspensa/ListaSuspensa";
 import { BotaoForm } from "../Botao/BotaoForm";
 import { useState } from "react";
 
-export function Form(props) {
+export function Form({aoCadastrar, times}) {
   const [nome, setNome] = useState("");
   const [cargo, setCargo] = useState("");
   const [imagem, setImagem] = useState("");
@@ -12,7 +12,7 @@ export function Form(props) {
 
   function aoSalvar(evento) {
     evento.preventDefault();
-    props.aoColaboradorCadastrado({
+    aoCadastrar({
       nome: nome,
       cargo: cargo,
       imagem: imagem,
@@ -55,13 +55,13 @@ export function Form(props) {
 
         <ListaSuspensa
           obrigatorio={true}
-          label="Time"
-          itens={props.times}
+          label="Times"
+          itens={times}
           valor={time}
           aoAlterado={(valor) => setTime(valor)}
         />
 
-        <BotaoForm>Criar Card</BotaoForm>
+        <BotaoForm texto={"Criar Card"}/>
       </form>
     </section>
   );
