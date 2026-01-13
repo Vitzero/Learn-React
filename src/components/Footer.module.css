@@ -5,11 +5,10 @@
 
 .container {
     display: flex;
-    align-items: center;        /* centraliza verticalmente */
-    justify-content: space-between; /* esquerda, centro, direita */
+    align-items: center;        
+    justify-content: space-between; 
 }
 
-/* Lado esquerdo: redes sociais */
 .ladoEsquerdo {
     display: flex;
     gap: 24px; 
@@ -21,15 +20,13 @@
     cursor: pointer;
 }
 
-/* Centro: logo */
 .centro {
     display: flex;
     justify-content: center;
-    flex: 1; /* ocupa espaço entre esquerda e direita */
+    flex: 1; 
     margin-left: 160px;
 }
 
-/* Lado direito: texto */
 .ladoDireito {
     display: flex;
     justify-content: flex-end;
